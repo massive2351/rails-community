@@ -25,6 +25,15 @@
                 <div class="text">
                     <p><%= post.content %></p>
                 </div>
+                <% if post.images.attached? %>
+                    
+                    <div class="image">
+                        <% post.images.each do |image| %>
+                            <%= image_tag image %>
+                        <% end %>
+                    </div>
+                <% end %>
+                
                 <div class="action-menu">
                     <div class="like">
 

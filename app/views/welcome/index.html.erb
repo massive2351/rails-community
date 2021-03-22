@@ -4,19 +4,24 @@
             <div class="content">
                 <div class="user-about">
                     <div class="image">
-                        <%= image_tag "noimage.png" %>
+                    <% if post.user.image.attached? %>
+                        <%= image_tag post.user.image %>
+                    <% else %>
+                        <%= image_tag noimage.png %>
+                    <% end %>
+
                     </div>
                     <div class="profile">
                         <div class="name-history">
                             <div class="name">
-                                うるぞー
+                                <%= post.user.name %>
                             </div>
                             <div class="learning-history">
-                                学習歴：　８年
+                                <%= "学習歴：#{post.user.learning_history}年" %>
                             </div>
                         </div>
                         <div class="purpose">
-                            転職したい
+                            <%= "Ruby on Railsを勉強している目的：#{post.user.purpose}" %>
                         </div>
 
                     </div>
@@ -26,14 +31,14 @@
                     <p><%= post.content %></p>
                 </div>
                 <% if post.images.attached? %>
-                    
+
                     <div class="image">
                         <% post.images.each do |image| %>
                             <%= image_tag image %>
                         <% end %>
                     </div>
                 <% end %>
-                
+
                 <div class="action-menu">
                     <div class="like">
 

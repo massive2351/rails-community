@@ -30,6 +30,12 @@ img{
   justify-content: space-between;
 }
 
+#header .logo img{
+  width: 150px;
+  height: auto;
+  
+}
+
 #header #nav{
   list-style: none;
   display: flex;
@@ -77,7 +83,7 @@ img{
 }
 
 .toast .alert{
-  background-color: #red;
+  background-color: red;
   color: #fff;
   padding: 10px;
 
